@@ -1,13 +1,15 @@
 package lesson2;
 import java.util.Scanner;
 
-public class Menu {
+//заполняем меню напитками с указанием кнопки выбора, названия и цены
+    class Menu {
 
-    Drinks soda = new Drinks(1, "Coca Cola", 0.85);
-    Drinks juice = new Drinks(2, "J7", 1.91);
-    Drinks iceTea = new Drinks(3, "Lipton", 0.95);
+    Drinks soda = new Drinks(1, "Coca Cola", 45);
+    Drinks juice = new Drinks(2, "J7", 120);
+    Drinks iceTea = new Drinks(3, "Lipton", 70);
 
-    public void startMenu() {
+//вывод меню напитков пользователю
+    void startMenu() {
 
         System.out.println("Добрый день!");
         System.out.println("Напитки на выбор: ");
@@ -17,39 +19,36 @@ public class Menu {
 
         System.out.print("Выберите ваш напиток: ");
     }
-
-    public int chooseDrink() {
+//считываем и сохраняем пользовательский выбор
+    int chooseDrink() {
         Scanner option = new Scanner(System.in);
         int slot = option.nextInt();
         return slot;
     }
+//"принимаем деньги" от пользователя
 
-    public double insert() {
-        System.out.println("Внесено 00,00.");
+    int insert() {
         System.out.println("Внесите наличные средства. ");
         Scanner money = new Scanner(System.in);
-        double amount = money.nextDouble();
-        return amount;
+        return money.nextInt();
     }
-
-    public void checkBalance(int slot, double amount) {
+//выдаем напиток в соответствии с выбранной позицией, считаем сдачу, если есть
+    void checkBalance(int slot, int amount) {
 
         if (soda.getSlot() == slot && soda.getPrice() <= amount) {
             System.out.println("Ваша " + soda.getDrink());
             System.out.println("Ваша сдача :" + (amount - soda.getPrice()));
         }
-        if (juice.getSlot() == slot && juice.getPrice() <= amount) {
+        else if (juice.getSlot() == slot && juice.getPrice() <= amount) {
             System.out.println("Ваш " + juice.getDrink());
             System.out.println("Ваша сдача :" + (amount - juice.getPrice()));
         }
-        if (iceTea.getSlot() == slot && iceTea.getPrice() <= amount) {
+        else if (iceTea.getSlot() == slot && iceTea.getPrice() <= amount) {
             System.out.println("Ваш " + iceTea.getDrink());
             System.out.println("Ваша сдача :" + (amount - iceTea.getPrice()));
         }
-        else {
-            System.out.println("Недостаточно средств!");
-            System.out.println("Попробуйте снова!");
+        else{
+            System.out.println("Недостаточно средств. Попробуйте снова.");
         }
-
     }
 }

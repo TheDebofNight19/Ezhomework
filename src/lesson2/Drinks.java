@@ -4,9 +4,9 @@ package lesson2;
 
     private int slot;
     private String drink;
-    private double price;
+    private int price;
 
-    Drinks(int slot, String drink, double price){
+    Drinks(int slot, String drink, int price){
 
         this.slot = slot;
         this.drink = drink;
@@ -29,11 +29,11 @@ package lesson2;
          this.drink = drink;
      }
 
-     public double getPrice() {
+     public int getPrice() {
          return price;
      }
 
-     public void setPrice(double price) {
+     public void setPrice(int price) {
          this.price = price;
      }
  }

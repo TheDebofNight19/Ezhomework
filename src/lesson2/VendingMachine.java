@@ -12,7 +12,13 @@ public class VendingMachine {
             System.out.println("Вы ввели неверный номер напитка, попробуйте снова!");
             choice = menu.chooseDrink();
         }
-        double amount =  menu.insert();
+        int amount = menu.insert();
+        //инструкции, если пользователь "не внес деньги"
+        while(amount == 0){
+            System.out.print("Внесено 000.");
+            System.out.println("Попробуйте еще раз.");
+            amount = menu.insert();
+        }
 
         menu.checkBalance(choice, amount);
 
