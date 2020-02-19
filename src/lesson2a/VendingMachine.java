@@ -1,4 +1,4 @@
-package lesson2;
+package lesson2a;
 
 public class VendingMachine {
     public static void main(String[] args){

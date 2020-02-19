@@ -1,4 +1,4 @@
-package lesson2;
+package lesson2a;
 import java.util.Scanner;
 
 //заполняем меню напитками с указанием кнопки выбора, названия и цены
