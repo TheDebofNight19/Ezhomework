@@ -1,15 +1,19 @@
 package lesson2a;
 import java.util.Scanner;
 
-//заполняем меню напитками с указанием кнопки выбора, названия и цены
+/**
+ * объявляем новые объекты класса Drinks, присваиваем им слоты, название и цену
+ */
     class Menu {
 
-    Drinks soda = new Drinks(1, "Coca Cola", 45);
-    Drinks juice = new Drinks(2, "J7", 120);
-    Drinks iceTea = new Drinks(3, "Lipton", 70);
+    private Drinks soda = new Drinks(1, "Coca Cola", 45);
+    private Drinks juice = new Drinks(2, "J7", 120);
+    private Drinks iceTea = new Drinks(3, "Lipton", 70);
 
-//вывод меню напитков пользователю
-    void startMenu() {
+    /**
+     * выводим стартовое меню и выбор напитков для пользователя
+     */
+   public void startMenu() {
 
         System.out.println("Добрый день!");
         System.out.println("Напитки на выбор: ");
@@ -19,21 +23,34 @@ import java.util.Scanner;
 
         System.out.print("Выберите ваш напиток: ");
     }
-//считываем и сохраняем пользовательский выбор
-    int chooseDrink() {
+
+    /**
+     * считываем и сохраняем пользовательский выбор
+     */
+
+    public int chooseDrink() {
         Scanner option = new Scanner(System.in);
         int slot = option.nextInt();
         return slot;
     }
-//"принимаем деньги" от пользователя
 
-    int insert() {
+    /**
+     * принимаем деньги от пользователя(ввод с консоли)
+     * @return интовое значение, считанное с консоли
+     */
+
+   public int insert() {
         System.out.println("Внесите наличные средства. ");
         Scanner money = new Scanner(System.in);
         return money.nextInt();
     }
-//выдаем напиток в соответствии с выбранной позицией, считаем сдачу, если есть
-    void checkBalance(int slot, int amount) {
+
+    /**
+     *
+     * @param slot
+     * @param amount
+     */
+    public void checkBalance(int slot, int amount) {
 
         if (soda.getSlot() == slot && soda.getPrice() <= amount) {
             System.out.println("Ваша " + soda.getDrink());

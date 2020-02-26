@@ -1,4 +1,9 @@
-package lesson2a;
+package lesson5.VendingMachineModified;
+
+/**
+ * Переписать проект с урока (вендинговыйавтомат) используя конструктор,
+ * перечисления и взаимодействие с пользователем.
+ */
 
 public class VendingMachine {
     public static void main(String[] args){
