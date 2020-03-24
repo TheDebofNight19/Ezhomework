@@ -46,8 +46,9 @@ public class Main {
         System.out.println("Теперь убедимся, что мы очистили корзину:");
 
         for(Item item : shopBasket.getItemList()){
-            System.out.println(item.getItemName() + "  " + item.getItemQuantity());
+            System.out.println(item.getItemName() + " X " + item.getItemQuantity());
         }
+        System.out.println(shopBasket.getItemList());
 
     }
 }
